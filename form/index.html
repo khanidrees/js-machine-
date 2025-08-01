@@ -1,55 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Form</title>
   <style>
-    .container{
-      width: 60vw;
-      margin:auto;
-      
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    .input-container{
-      margin-top: 15px;
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      padding: 2rem 1rem;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      color: #333;
     }
-    .input-container label{
-      display: inline-block;
-      width: 150px;
+
+    form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #222;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"] {
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border: 1.5px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="tel"]:focus {
+      border-color: #0077cc;
+      outline: none;
+      box-shadow: 0 0 4px rgba(0, 119, 204, 0.5);
+    }
+
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    legend {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      color: #222;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .radio-group label {
+      font-weight: normal;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 1rem;
+    }
+
+    input[type="radio"] {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      margin: 0;
+    }
+
+    button[type="submit"] {
+      background-color: #0077cc;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: stretch;
+    }
+
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: #005fa3;
+      outline: none;
+      box-shadow: 0 0 8px rgba(0, 95, 163, 0.7);
+    }
+
     
   </style>
 </head>
-<body>  
-  <div>
-    <form class="container" autocomplete="on">
-      <div class="input-container">
-        <label for="firstname">First Name: </label>
-        <input type="text" id="firstname" name="firstname" minlength="5" required/>
+<body>
+  <form autocomplete="on" novalidate>
+    <div class="form-group">
+      <label for="firstname">First Name *</label>
+      <input type="text" id="firstname" name="firstname" minlength="2" required placeholder="Enter your first name" autocomplete="given-name" />
+    </div>
+
+    <div class="form-group">
+      <label for="lastname">Last Name *</label>
+      <input type="text" id="lastname" name="lastname" minlength="2" required placeholder="Enter your last name" autocomplete="family-name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required placeholder="example@example.com" autocomplete="email" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password *</label>
+      <input type="password" id="password" name="password" minlength="8" required placeholder="At least 8 characters" autocomplete="new-password" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" pattern="^\+?\d{10,15}$" required placeholder="+1234567890" autocomplete="tel" />
+      <!-- pattern attribute added for better phone validation -->
+    </div>
+
+    <fieldset class="form-group">
+      <legend>Gender *</legend>
+      <div class="radio-group" role="radiogroup" aria-labelledby="gender-legend">
+        <label for="male">
+          <input type="radio" name="gender" id="male" value="male" required /> Male
+        </label>
+        <label for="female">
+          <input type="radio" name="gender" id="female" value="female" /> Female
+        </label>
       </div>
-      <div class="input-container">
-        <label for="lastname">Last Name: </label>
-        <input type="text" id="lastname" name="lastname" minlength="5" required/>
-      </div>
-      <div class="input-container">
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" required/>
-      </div>
-      <div class="input-container">
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" minlength="8"
-        required/>
-      </div>
-      <div class="input-container">
-        <label for="phone">Phone Number: </label>
-        <input type="tel" id="phone" name="phone" minlength="10" required/>
-      </div>
-      <div class="input-container">
-        <input type="submit" id="submit" value="submit" />
-      </div>
-    </form>
-  </div>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
