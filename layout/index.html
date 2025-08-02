@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .border {
+      border: 2px solid #0077cc;
+      background: #e8f0fe;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header, footer {
+      height: 60px;
+      flex-shrink: 0;
+    }
+
+    main {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+
+    aside {
+      width: 25vw;
+      min-width: 180px;
+      max-width: 260px;
+      flex-shrink: 0;
+      background: #cffaf0;
+      height: auto; /* allow to grow */
+    }
+
+    section {
+      width: 75vw;
+      flex: 1 1 0%;
+      min-width: 0;
+      overflow-y: auto;
+      background: #fff;
+      height: auto;
+    }
+
+    /* Responsive: stack sidebar below header/content on narrow screens */
+    @media (max-width: 800px) {
+      main {
+        flex-direction: column;
+      }
+      aside, section {
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="border">
+    header
+  </header>
+  <main>
+    <aside class="border">
+      aside
+    </aside>
+    <section class="border">
+      section
+    </section>
+  </main>
+  <footer class="border">
+    footer
+  </footer>
+</body>
+</html>
