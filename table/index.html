@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Students Table</title>
   <style>
-    table td, table th{
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      font-family: Arial, sans-serif;
+      border: 1px solid #ddd;
+    }
+
+    caption {
+      caption-side: top;
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    th,
+    td {
       padding: 10px 20px;
+      border: 1px solid #ddd;
+      text-align: left;
     }
-    tbody>tr:nth-child(even){
-      background-color: aquamarine;
+
+    thead th {
+      background-color: #0077cc;
+      color: white;
     }
-    tbody>tr:hover{
-      background-color: rgb(1, 212, 141);
+
+    tbody tr:nth-child(even) {
+      background-color: #c7f0e8; /* aquamarine-like but softer and accessible */
+    }
+
+    tbody tr:hover {
+      background-color: #01d48d; /* brighter accent on hover */
+      color: #000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
   </style>
 </head>
 <body>
   <table>
-    <caption>Students Table</caption>
+    <caption>Students Academic Information</caption>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Grade</th>
-        <th>Subject</th>
+        <th scope="col">Name</th> 
+        <!-- Added scope="col" on header cells to improve screen reader semantics. -->
+        <th scope="col">Age</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Subject</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>shubham </td>
+        <td>Shubham</td>
         <td>18</td>
         <td>B</td>
         <td>Math</td>
       </tr>
       <tr>
-        <td>shubham </td>
+        <td>Shubham</td>
         <td>18</td>
         <td>B</td>
         <td>Math</td>
       </tr>
       <tr>
-        <td>shubham </td>
+        <td>Shubham</td>
         <td>18</td>
         <td>B</td>
         <td>Math</td>
       </tr>
       <tr>
-        <td>shubham </td>
+        <td>Shubham</td>
         <td>18</td>
         <td>B</td>
         <td>Math</td>
       </tr>
-
     </tbody>
   </table>
-  
 </body>
 </html>

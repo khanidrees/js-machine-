@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <style>
+    /* Basic styling for navigation */
+    nav {
+      background-color: #0077cc;
+      padding: 0.75rem 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: Arial, sans-serif;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Highlight the current page link */
+    nav ul li a[aria-current="page"] {
+      background-color: #005fa3;
+    }
+
+    /* Hover and focus states for links */
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: #005fa3;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
