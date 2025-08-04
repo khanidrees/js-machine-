@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .container{
+      height: 100dvh;
+      width: 100%;
+    }
+    .container img{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #carousel-nav{
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      bottom: 20px;
+    }
+    .circle{
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: grey;
+      margin-left: 10px;
+    }
+    .current{
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img id="image" src="" />
+    <div id="carousel-nav">
+      <button id="prev">prev</button>
+      <div id="dots"></div>
+      <button id='next'>next</button>
+    </div>
+  </div>
+ 
+<script src="index.js"></script>
+</body>
+</html>
