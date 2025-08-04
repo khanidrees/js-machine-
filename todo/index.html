@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .completed{
+      text-decoration: line-through;
+    }
+    
+    li{
+      margin-top: 20px;
+    }
+    li button{
+      margin-left: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    TODOs
+    1. separation of concerns? handle data in js not in DOM and then render wrt data
+    2. persistence in js localstorage
+    3. document fragment to optimize render and why 
+
+    <h2>Todo List</h2>
+    <input type="text" id="titleinp"/>
+    <button id="addbtn">Add</button>
+    <ul id="list">
+
+    </ul>
+  </div>
+  
+<script
+src="./index.js"
+></script>
+</body>
+</html>
